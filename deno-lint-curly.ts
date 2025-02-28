@@ -15,7 +15,7 @@ const nodeTypeWordings = {
   WhileStatement: "while",
 } as const satisfies Record<NodeType["type"], string>;
 
-const plugin = {
+const plugin: Deno.lint.Plugin = {
   name: "deno-lint-curly",
   rules: {
     "deno-lint-curly": {
@@ -53,6 +53,6 @@ const plugin = {
       },
     },
   },
-} satisfies Deno.lint.Plugin;
+};
 
 export default plugin;
