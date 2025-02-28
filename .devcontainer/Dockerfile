@@ -1,0 +1,1 @@
+FROM denoland/deno:debian-2.2.2

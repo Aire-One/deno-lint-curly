@@ -1,0 +1,9 @@
+{
+  "lint": {
+    "plugins": ["./deno-lint-curly.ts"]
+  },
+  "name": "@aireone/deno-lint-curly",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./deno-lint-curly.ts"
+}
