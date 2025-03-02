@@ -1,4 +1,4 @@
-import DenoLintCurly from "./deno-lint-curly.ts";
+import denoLintCurly from "./deno-lint-curly.ts";
 import { expect } from "jsr:@std/expect";
 
 function test(
@@ -10,7 +10,7 @@ function test(
 ) {
   Deno.test(name, () => {
     const diagnostics = Deno.lint.runPlugin(
-      DenoLintCurly,
+      denoLintCurly,
       "main.ts",
       code,
     );
@@ -172,7 +172,7 @@ for (const { name, ...testCase } of testCases) {
 
 Deno.test("fix", () => {
   const diagnostics = Deno.lint.runPlugin(
-    DenoLintCurly,
+    denoLintCurly,
     "main.ts",
     "if (true) console.log('Hello, world!');",
   );
