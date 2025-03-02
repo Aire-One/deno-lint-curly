@@ -15,6 +15,7 @@ const nodeTypeWordings = {
   WhileStatement: "while",
 } as const satisfies Record<NodeType["type"], string>;
 
+/**  A minimal implementation of the eslint curly rule for deno lint. */
 const denoLintCurly: Deno.lint.Plugin = {
   name: "deno-lint-curly",
   rules: {

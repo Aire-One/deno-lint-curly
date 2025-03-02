@@ -19,7 +19,9 @@
       "extensions": [
         "justjavac.vscode-deno-extensionpack",
         "ms-azuretools.vscode-docker",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "DavidAnson.vscode-markdownlint",
+        "dnut.rewrap-revived"
       ]
     }
   },
