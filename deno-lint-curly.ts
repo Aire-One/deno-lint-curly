@@ -27,6 +27,14 @@ const plugin: Deno.lint.Plugin = {
               message: `Use curly braces for \`${
                 nodeTypeWordings[node.type]
               }\` statement`,
+              fix(fixer) {
+                return fixer.replaceText(
+                  body,
+                  // Add a chariage return before the body because deno fmt will
+                  // remove the curly braces if they are on the same line.
+                  `{\n${context.sourceCode.getText(body)}}`,
+                );
+              },
             });
           }
         }

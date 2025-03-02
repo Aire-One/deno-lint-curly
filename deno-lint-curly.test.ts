@@ -169,3 +169,20 @@ const testCases = [
 for (const { name, ...testCase } of testCases) {
   test(name, testCase);
 }
+
+Deno.test("fix", () => {
+  const diagnostics = Deno.lint.runPlugin(
+    DenoLintCurly,
+    "main.ts",
+    "if (true) console.log('Hello, world!');",
+  );
+
+  const { text: fixedCode } =
+    // need to provide a type assertion here because the type is not correct and
+    // PR https://github.com/denoland/deno/pull/28344 is not yet part of a
+    // release
+    (diagnostics[0].fix as unknown as Deno.lint.Fix[])[0];
+
+  expect(fixedCode).toEqual(`{
+console.log('Hello, world!');}`);
+});
